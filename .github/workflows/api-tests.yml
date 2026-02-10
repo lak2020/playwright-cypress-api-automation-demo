@@ -10,6 +10,8 @@ on:
 permissions:
   contents: write
   checks: write
+  pages: write
+  id-token: write
 
 jobs:
   api-tests:
@@ -35,12 +37,20 @@ jobs:
       - name: Merge Mochawesome reports
         if: always()
         run: |
-          npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json || true
+          npx mochawesome-merge cypress/reports/mochawesome*.json > cypress/reports/merged-report.json || true
 
       - name: Generate HTML report
         if: always()
         run: |
-          npx marge cypress/reports/merged-report.json -f report -o cypress/reports/html || true
+          npx marge cypress/reports/merged-report.json -f index -o cypress/reports/html --inline || true
+
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: cypress/reports/html
 
       - name: Upload test reports
         uses: actions/upload-artifact@v4
