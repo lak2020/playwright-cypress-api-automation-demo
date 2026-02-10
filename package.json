@@ -1,0 +1,41 @@
+{
+  "name": "playwright-cypress-api-automation-demo",
+  "version": "1.0.0",
+  "description": "A modern API test automation framework built with Cypress, demonstrating best practices for API testing including service object pattern, Mochawesome reporting, and CI/CD integration.",
+  "scripts": {
+    "test": "cypress run",
+    "test:posts": "cypress run --spec 'cypress/e2e/posts/**/*.cy.js'",
+    "test:users": "cypress run --spec 'cypress/e2e/users/**/*.cy.js'",
+    "test:todos": "cypress run --spec 'cypress/e2e/todos/**/*.cy.js'",
+    "test:open": "cypress open",
+    "report:merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json",
+    "report:generate": "marge cypress/reports/merged-report.json -f report -o cypress/reports/html",
+    "report": "npm run report:merge && npm run report:generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lak2020/playwright-cypress-api-automation-demo.git"
+  },
+  "keywords": [
+    "cypress",
+    "api-testing",
+    "automation",
+    "jsonplaceholder",
+    "mochawesome"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lak2020/playwright-cypress-api-automation-demo/issues"
+  },
+  "homepage": "https://github.com/lak2020/playwright-cypress-api-automation-demo#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^10.3.0",
+    "cypress": "^15.10.0",
+    "cypress-plugin-api": "^2.11.2",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
+  }
+}

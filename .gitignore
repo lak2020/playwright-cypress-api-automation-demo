@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Cypress
+cypress/reports/
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Logs
+logs/
+
+# IDE
+.vs/
+.idea/
+*.suo
+*.user
+.vscode/
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Environment
+.env
+.env.local
