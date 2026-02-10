@@ -3,7 +3,13 @@
 A modern API test automation framework built with **Cypress**, **JavaScript**, and **Mochawesome** reporting.
 
 Demonstrates best practices for API testing including service object pattern, data-driven testing, Faker.js random data generation, and CI/CD integration.
+## 🔗 Live Demo
 
+| Resource | Link |
+|---|---|
+| 📊 **Test Report** | [https://lak2020.github.io/playwright-cypress-api-automation-demo/](https://lak2020.github.io/playwright-cypress-api-automation-demo/) |
+| 🔄 **CI/CD Pipeline** | [GitHub Actions](https://github.com/lak2020/playwright-cypress-api-automation-demo/actions) |
+| 📁 **Source Code** | [GitHub Repository](https://github.com/lak2020/playwright-cypress-api-automation-demo) |
 ## 🏗️ Project Structure
 
 ```
