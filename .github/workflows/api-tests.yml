@@ -52,6 +52,14 @@ jobs:
           publish_branch: gh-pages
           publish_dir: cypress/reports/html
 
+      - name: Print report URL
+        if: always()
+        run: |
+          echo "==========================================="
+          echo "📊 Mochawesome Report is live at:"
+          echo "https://lak2020.github.io/playwright-cypress-api-automation-demo/"
+          echo "==========================================="
+
       - name: Upload test reports
         uses: actions/upload-artifact@v4
         if: always()
